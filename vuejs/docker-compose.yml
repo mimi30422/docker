@@ -1,0 +1,18 @@
+version: "3"
+services:
+    webkpi:
+        build:
+            context: .
+            args:
+                - API_URI=http://webbe:5000
+        ports:
+        - "8000:80"
+        restart: always
+        links:
+            - webbe
+
+    webbe:
+        build:
+            context: .
+            dockerfile: Dockerfile-be
+        restart: always
