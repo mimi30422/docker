@@ -1,0 +1,33 @@
+version: "3"
+services:
+  server01:
+    image: luvina001/ubuntubase
+    container_name: server01
+    hostname: server01
+    ports:
+    - "1122:22"
+  server011:
+    image: luvina001/ubuntubase
+    container_name: server011
+    hostname: server011
+    ports:
+    - "11122:22"
+  server02:
+    image: luvina001/ubuntubase
+    container_name: server02
+    hostname: server02
+    ports:
+    - "1222:22"
+  server03:
+    image: luvina001/ubuntubase
+    container_name: server03
+    hostname: server03
+    ports:
+    - "1322:22"
+    - "8000:8000"
+  server04:
+    image: luvina001/ubuntubase
+    container_name: server04
+    hostname: server04
+    ports:
+    - "1422:22"
