@@ -1,0 +1,20 @@
+FROM node:15-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV TZ Asia/Ho_Chi_Minh
+
+# change timezone
+RUN apk add --no-cache --update tzdata
+RUN rm -rf /var/cache/apk/*
+
+COPY package*.json ./
+
+RUN npm install --only=production  && npm cache clean --force --loglevel=error
+
+COPY . .
+
+EXPOSE 5000
+
+CMD [ "npm", "run", "backend" ]
